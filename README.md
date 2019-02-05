@@ -10,6 +10,7 @@ The native GENIE cross-section that this work was based on was obtained using th
 gmkspl -p 12,-12,14,-14,16,-16 -t 1000080160,1000010010 -e 1000 -o 'native_genie.xml' -n 500
 ```
 ### Default GENIE neutrino interaction channels
+GENIE will use the following event generators when the list of event generators to be used is not specified:
 - Charged current quasi-elastic scattering (QEL-CC)
 - Neutral current quasi-elastic scattering (QEL-NC)
 - Charged current baryon resonance production (RES-CC)
@@ -42,11 +43,17 @@ gevgen -n 5000 -e 60,210 -f '1' -p 14 --cross-sections /path_to_spline/full_pack
 ```
 
 ## Cross-check plots
-### test
+### Multiplicity distribution checks
+Checking the distribution of multiplicities of the stable daughter particles
 ![](https://github.com/plt109/csms_genie/blob/master/figures/numu/p_multi_numu.png)
+![](https://github.com/plt109/csms_genie/blob/master/figures/numu/ap_multi_numu.png)
 
-### Checking distribution of multiplicity and kinematic variables of stable daughter particles
-blah
+### Kinematics distribution checks
+Checking the distribution of the 4-momentum components of the stable daughter particles
+![](https://github.com/plt109/csms_genie/blob/master/figures/numu/e_numu.png)
+![](https://github.com/plt109/csms_genie/blob/master/figures/numu/px_numu.png)
+![](https://github.com/plt109/csms_genie/blob/master/figures/numu/py_numu.png)
+![](https://github.com/plt109/csms_genie/blob/master/figures/numu/pz_numu.png)
 
 The full collection of the cross-check plots can be found in:
 https://github.com/plt109/csms_genie/tree/master/figures
