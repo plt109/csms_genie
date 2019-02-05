@@ -1,8 +1,12 @@
 # csms_genie
-GENIE splines with CSMS cross-sections for high energy neutrino deep inelastic scattering (DIS) interactions.
+Native GENIE splines with Cooper-Sarkar-Mertsch-Sarkar (CSMS) neutrino cross-sections for high energy neutrino deep inelastic scattering (DIS) interactions.
 
 ## Background
+The largest source of uncertainties in calculating neutrino cross-sections at high energies is the uncertainties on the parton distribution functions (PDFs) of the nucleon. 
 
+CSMS neutrino cross-section is an updated prediction of high energy neutrino and anti-neutrino charged current (CC) and neutral current (NC) DIS cross-sections using the Dokshitzer–Gribov–Lipatov–Altarelli–Parisi (DGLAP) formalism of next-to-leading-order (NLO) Quantum Chromodynamics (QCD) and using the HERAPDF1.5 PDF fits.
+
+This neutrino cross-section spline package attempts to incorporate the CSMS DIS neutrino cross-sections with the native GENIE neutrino cross-section splines.
 
 ### Native GENIE cross-section splines
 The native GENIE cross-section that this work was based on was obtained using the following command in GENIE 2.8.6:
@@ -31,7 +35,7 @@ Cross-sections of the channels marked with an asterisk(&ast;) were modified in t
 
 
 ## Prerequisites
-This set of GENIE with CSMS cross-section splines was developed and tested with GENIE 2.8.6. on <whatever the fend archi is>. 
+This set of GENIE with CSMS cross-section splines was developed and tested with GENIE 2.8.6. on Red Hat Linux. 
 
 ## Getting started
 Download and unpack the GENIE splines with CSMS cross-section found at https://github.com/plt109/csms_genie/blob/master/full_package_conjoined_v9b.tar.gz at your desired path(e.g. /path_to_GENIE/GENIE_2_8_6/data/xsec/), and proceed with generating GENIE events with the splines.
