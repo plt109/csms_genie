@@ -9,8 +9,20 @@ The native GENIE cross-section that this work was based on was obtained using th
 ```
 gmkspl -p 12,-12,14,-14,16,-16 -t 1000080160,1000010010 -e 1000 -o 'native_genie.xml' -n 500
 ```
+### GENIE neutrino interaction channels
+- lala&ast;
+- lala2
+
+Cross-sections of the channels marked with an asterisk(&ast;) were modified in this cross-section spline package.
+
+### Cross-section modifications
+
+
+## Prerequisites
+This set of GENIE with CSMS cross-section splines was developed and tested with GENIE 2.8.6. on <whatever the fend archi is>. 
 
 ## Getting started
+Download and unpack the GENIE splines with CSMS cross-section found at https://github.com/plt109/csms_genie/blob/master/full_package_conjoined_v9b.tar.gz at your desired path, and proceed with generating GENIE events with the splines.
 
 ### Example to generate events using GENIE splines with CSMS cross-sections
 For generating 5000 muon neutrino on water events with a flat flux from 60-210 GeV:
