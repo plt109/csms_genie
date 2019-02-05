@@ -29,7 +29,7 @@ The full collection of the cross-check plots can be found in:
 https://github.com/plt109/csms_genie/tree/master/figures
 
 ## Author
-Pueh Leng Tan, 2019
+Pueh Leng Tan, 5 February 2019
 
 ## References
 Details of the CSMS cross-sections calculations can be found at:
