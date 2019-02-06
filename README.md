@@ -38,12 +38,23 @@ Cross-sections of the channels marked with an asterisk(&ast;) were modified in t
 This set of GENIE with CSMS cross-section splines was developed and tested with GENIE 2.8.6. on Red Hat Linux. 
 
 ## Getting started
-Download and unpack the GENIE splines with CSMS cross-section found at https://github.com/plt109/csms_genie/blob/master/full_package_conjoined_v9b.tar.gz at your desired path(e.g. /path_to_GENIE/GENIE_2_8_6/data/xsec/), and proceed with generating GENIE events with the splines.
+Download GENIE splines with CSMS cross-section found at https://github.com/plt109/csms_genie/blob/master/full_package_conjoined_v9b.tar.gz
+
+Extract the .tar.gz file to your desired path(e.g. /path_to_GENIE/GENIE_2_8_6/data/xsec/). 
+```
+tar -zxvf full_package_conjoined_v9b.tar.gz -C /path_to_GENIE/GENIE_2_8_6/data/xsec/
+```
+
+full_package_conjoined_v9b.tar.gz contains the following files:
+- Read me description file: README.txt
+- Cross-section XML spline file: full_package_conjoined_v9b.xml (MD5 = df86ee7afdef52e02ad591618332edc5)
+
+This cross-section XML spline file must be specified when generating events using GENIE.
 
 ### Example to generate events using GENIE splines with CSMS cross-sections
-For generating 5000 muon neutrino on water events with a flat flux from 60-210 GeV:
+To generate 5000 events in each of which a 300 GeV muon neutrino interacts with water(88.79% O16, 11.21% H1):
 ```
-gevgen -n 5000 -e 60,210 -f '1' -p 14 --cross-sections /path_to_spline/full_package_conjoined_v9b.xml -t 1000080160[0.8879],1000010010[0.1121]
+gevgen -n 5000 -e 300 -p 14 --cross-sections /path_to_spline/full_package_conjoined_v9b.xml -t 1000080160[0.8879],1000010010[0.1121]
 ```
 
 ## Cross-check plots
