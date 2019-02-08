@@ -6,13 +6,36 @@ The largest source of uncertainties in calculating neutrino cross-sections at hi
 
 CSMS neutrino cross-section is an updated prediction of high energy neutrino and anti-neutrino charged current (CC) and neutral current (NC) DIS cross-sections using the Dokshitzer–Gribov–Lipatov–Altarelli–Parisi (DGLAP) formalism of next-to-leading-order (NLO) Quantum Chromodynamics (QCD) and using the HERAPDF1.5 PDF fits.
 
-This neutrino cross-section spline package attempts to incorporate the CSMS DIS neutrino cross-sections with the native GENIE neutrino cross-section splines.
+This modified GENIE neutrino cross-section spline package attempts to incorporate the CSMS DIS neutrino cross-sections into the native GENIE neutrino cross-section splines. 
 
-### Native GENIE cross-section splines
-The native GENIE cross-section that this work was based on was obtained using the following command in GENIE 2.8.6:
+### Modifications to native GENIE cross-section splines
+This neutrino cross-section spline package is designed such that the user can just download the spline package, specify this spline package to be used using the '--cross-sections' flag while generating events in GENIE and GENIE will generate the neutrino events according to:
+
+- Native GENIE neutrino cross-section below 70 GeV
+- A mixture of native GENIE neutrino cross-section and CSMS cross-section in the transition region from 70-200 GeV
+- Pure CSMS cross-sections from 200-1000 GeV. CSMS cross-section above 1000 GeV is not included in this spline package, but can be included in if there is a demand for it.
+
+![](https://github.com/plt109/csms_genie/blob/master/figures/xsec/nu_cc.png)
+![](https://github.com/plt109/csms_genie/blob/master/figures/xsec/nu_cc_zoomed.png)
+
+The full collection of plots showing native GENIE cross-section overlaid with CSMS cross-section can be found in:
+https://github.com/plt109/csms_genie/tree/master/figures/xsec
+
+### Native GENIE neutrino cross-section region
+The native GENIE cross-section that this work is based on is obtained using the following command in GENIE 2.8.6:
 ```
 gmkspl -p 12,-12,14,-14,16,-16 -t 1000080160,1000010010 -e 1000 -o 'native_genie.xml' -n 500
 ```
+## Transition region
+This transition region exists to minimise ripples in cross-section splines when GENIE interpolates from the cross-section splines using cubic splining.
+
+## Pure CSMS neutrino cross-section region
+Details of the CSMS cross-sections calculations can be found at:
+https://arxiv.org/abs/1106.3723v2
+
+Cross-section values for neutrino and anti-neutrino Neutral Current (NC) and Charged Current (CC) interactions on proton, neutron, and isoscalar targets were obtained from:
+http://www-pnp.physics.ox.ac.uk/~cooper/neutrino/
+
 ### Default GENIE neutrino interaction channels
 GENIE will use the following event generators when the list of event generators to be used is not specified:
 - Charged current quasi-elastic scattering (QEL-CC)
@@ -29,10 +52,7 @@ GENIE will use the following event generators when the list of event generators 
 - Inverse muon decay (IMD)
 - Inverse muon decay (IMD-ANH)
 
-Cross-sections of the channels marked with an asterisk(&ast;) were modified in this cross-section spline package.
-
-### Cross-section modifications
-
+Cross-sections of only the channels marked with an asterisk(&ast;) are modified in this cross-section spline package.
 
 ## Prerequisites
 This set of GENIE with CSMS cross-section splines was developed and tested with GENIE 2.8.6. on Red Hat Linux. 
@@ -75,10 +95,3 @@ https://github.com/plt109/csms_genie/tree/master/figures
 
 ## Author
 Pueh Leng Tan, 5 February 2019
-
-## References
-Details of the CSMS cross-sections calculations can be found at:
-https://arxiv.org/abs/1106.3723v2
-
-Cross-section values for neutrino and anti-neutrino Neutral Current (NC) and Charged Current (CC) interactions on proton, neutron, and isoscalar targets were obtained from:
-http://www-pnp.physics.ox.ac.uk/~cooper/neutrino/
