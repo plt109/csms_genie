@@ -9,7 +9,7 @@ CSMS neutrino cross-section is an updated prediction of high energy neutrino and
 This modified GENIE neutrino cross-section spline package attempts to incorporate the CSMS DIS neutrino cross-sections into the native GENIE neutrino cross-section splines. 
 
 ### Modifications to native GENIE cross-section splines
-This neutrino cross-section spline package is designed such that the user can just download the spline package, specify this spline package .xml file to be used using the '--cross-sections' flag while generating events in GENIE, and GENIE will generate the neutrino events according to:
+This neutrino cross-section spline package is designed such that the user can just download the spline package, specify this spline package .xml file to be used using the `--cross-sections` flag while generating events in GENIE, and GENIE will generate the neutrino events according to:
 
 - Native GENIE neutrino cross-section for neutrino energies below 70 GeV
 - A mixture of native GENIE neutrino cross-section and CSMS cross-section in the transition region from 70-200 GeV
@@ -33,14 +33,12 @@ gmkspl -p 12,-12,14,-14,16,-16 -t 1000080160,1000010010 -e 1000 -o 'native_genie
 In the transition region from 70-200 GeV, the native GENIE neutrino cross-section tapers off linearly while the CSMS cross-section is introduced linearly. This treatment minimises ripples in cross-section splines when GENIE interpolates from the cross-section splines using cubic splining.
 
 ## Pure CSMS neutrino cross-section region
-CSMS neutrino cross-sections are calculated for $Q^2>1GeV^2$ so that perturbative QCD methods can be reliably used. CSMS neutrino cross-section values are not only available for neutrino energies <50 GeV as this region would have contributions from $Q^2<1GeV$. Details of the CSMS cross-sections calculations can be found at:
+CSMS neutrino cross-sections are calculated for Q^2>1GeV^2 so that perturbative QCD methods can be reliably used. CSMS neutrino cross-section values are not only available for neutrino energies <50 GeV as this region would have contributions from Q^2<1GeV^2. Details of the CSMS cross-sections calculations can be found at:
 https://arxiv.org/abs/1106.3723v2
-
 
 Decided to introduce CSMS fully >200 GeV because BLAH.
 
 Left the tau neutrino cross-sections untouched because BLAH.
-
 
 ### Default GENIE neutrino interaction channels
 GENIE will use the following event generators when the list of event generators to be used is not specified:
