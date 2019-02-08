@@ -9,16 +9,18 @@ CSMS neutrino cross-section is an updated prediction of high energy neutrino and
 This modified GENIE neutrino cross-section spline package attempts to incorporate the CSMS DIS neutrino cross-sections into the native GENIE neutrino cross-section splines. 
 
 ### Modifications to native GENIE cross-section splines
-This neutrino cross-section spline package is designed such that the user can just download the spline package, specify this spline package to be used using the '--cross-sections' flag while generating events in GENIE and GENIE will generate the neutrino events according to:
+This neutrino cross-section spline package is designed such that the user can just download the spline package, specify this spline package .xml file to be used using the '--cross-sections' flag while generating events in GENIE, and GENIE will generate the neutrino events according to:
 
-- Native GENIE neutrino cross-section below 70 GeV
+- Native GENIE neutrino cross-section for neutrino energies below 70 GeV
 - A mixture of native GENIE neutrino cross-section and CSMS cross-section in the transition region from 70-200 GeV
-- Pure CSMS cross-sections from 200-1000 GeV. CSMS cross-section above 1000 GeV is not included in this spline package, but can be included in if there is a demand for it.
+- Pure CSMS cross-sections from 200-1000 GeV. CSMS cross-section for neutrino energies above 1000 GeV is not included in this spline package, but can be included should there be a demand for it.
 
+The total charged current cross-section as a function of incoming neutrino energy for the various neutrino flavours on Hydrogen-1 and Oxygen-16 is show in the figure below:
 ![](https://github.com/plt109/csms_genie/blob/master/figures/xsec/nu_cc.png)
+Zooming in to the transition and CSMS region, the modified GENIE cross-section deviates from the CSMS cross-section values by <10% at the 70 GeV and dropping down to <2% in the pure CSMS region:
 ![](https://github.com/plt109/csms_genie/blob/master/figures/xsec/nu_cc_zoomed.png)
 
-The full collection of plots showing native GENIE cross-section overlaid with CSMS cross-section can be found in:
+The full collection of plots showing native GENIE cross-sections overlaid with CSMS cross-sections can be found in:
 https://github.com/plt109/csms_genie/tree/master/figures/xsec
 
 ### Native GENIE neutrino cross-section region
@@ -26,15 +28,19 @@ The native GENIE cross-section that this work is based on is obtained using the 
 ```
 gmkspl -p 12,-12,14,-14,16,-16 -t 1000080160,1000010010 -e 1000 -o 'native_genie.xml' -n 500
 ```
+
 ## Transition region
-This transition region exists to minimise ripples in cross-section splines when GENIE interpolates from the cross-section splines using cubic splining.
+In the transition region from 70-200 GeV, the native GENIE neutrino cross-section tapers off linearly while the CSMS cross-section is introduced linearly. This treatment minimises ripples in cross-section splines when GENIE interpolates from the cross-section splines using cubic splining.
 
 ## Pure CSMS neutrino cross-section region
-Details of the CSMS cross-sections calculations can be found at:
+CSMS neutrino cross-sections are calculated for $Q^2>1GeV^2$ so that perturbative QCD methods can be reliably used. CSMS neutrino cross-section values are not only available for neutrino energies <50 GeV as this region would have contributions from $Q^2<1GeV$. Details of the CSMS cross-sections calculations can be found at:
 https://arxiv.org/abs/1106.3723v2
 
-Cross-section values for neutrino and anti-neutrino Neutral Current (NC) and Charged Current (CC) interactions on proton, neutron, and isoscalar targets were obtained from:
-http://www-pnp.physics.ox.ac.uk/~cooper/neutrino/
+
+Decided to introduce CSMS fully >200 GeV because BLAH.
+
+Left the tau neutrino cross-sections untouched because BLAH.
+
 
 ### Default GENIE neutrino interaction channels
 GENIE will use the following event generators when the list of event generators to be used is not specified:
