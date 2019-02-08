@@ -40,7 +40,7 @@ Decided to introduce CSMS fully >200 GeV because BLAH.
 
 Left the tau neutrino cross-sections untouched because BLAH.
 
-### Default GENIE neutrino interaction channels
+### Modified GENIE neutrino interaction channels
 GENIE will use the following event generators when the list of event generators to be used is not specified:
 - Charged current quasi-elastic scattering (QEL-CC)
 - Neutral current quasi-elastic scattering (QEL-NC)
