@@ -36,9 +36,11 @@ In the transition region from 70-200 GeV, the native GENIE neutrino cross-sectio
 CSMS neutrino cross-sections are calculated for Q^2>1GeV^2 so that perturbative QCD methods can be reliably used. CSMS neutrino cross-section values are not only available for neutrino energies <50 GeV as this region would have contributions from Q^2<1GeV^2. Details of the CSMS cross-sections calculations can be found at:
 https://arxiv.org/abs/1106.3723v2
 
-Decided to introduce CSMS fully >200 GeV because BLAH.
+Comparing native GENIE cross-sections, CSMS cross-sections with total inclusive CC isoscalar cross-section measurements from
+νμN → μ−X for the PDG cross section (G.P. Zeller June 2012). Visually, 200 GeV looks like a stable spot for native GENIE cross-section to transit into CSMS cross-sections fully.
+![](https://github.com/plt109/csms_genie/blob/master/figures/xsec/exp_overlay_500knts.png)
 
-Left the tau neutrino cross-sections untouched because BLAH.
+<span style="color:red">Left the tau neutrino cross-sections untouched because BLAH.</span>
 
 ### Modified GENIE neutrino interaction channels
 GENIE will use the following event generators when the list of event generators to be used is not specified:
