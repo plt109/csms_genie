@@ -40,7 +40,7 @@ Comparing native GENIE cross-sections, CSMS cross-sections with total inclusive 
 νμN → μ−X for the PDG cross section (G.P. Zeller June 2012). Visually, 200 GeV looks like a stable spot for native GENIE cross-section to transit into CSMS cross-sections fully.
 ![](https://github.com/plt109/csms_genie/blob/master/figures/xsec/exp_overlay_500knts.png)
 
-Left the tau neutrino cross-sections untouched because BLAH.
+Left the tau neutrino cross-sections untouched because the tau neutrino cross section is different from that of the muon neutrino cross section (Refer to Fig. 2 of https://arxiv.org/pdf/1007.1966.pdf) while the CSMS neutrino cross section is the same for electron neutrinos, muon neutrinos and tau neutrinos.
 
 ### Modified GENIE neutrino interaction channels
 GENIE will use the following event generators when the list of event generators to be used is not specified:
